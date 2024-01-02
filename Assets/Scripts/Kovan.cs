@@ -7,7 +7,7 @@ public class Kovan : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject,5f);
+        Destroy(gameObject,20f);
     }
 
     void Update()

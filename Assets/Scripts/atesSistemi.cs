@@ -298,8 +298,9 @@ public class atesSistemi : NetworkBehaviour
         }*/
         GameObject _kovan = Instantiate(silah.Kovan, silah.kovanCikis.position, gameObject.transform.rotation);
         _kovan.transform.SetParent(silah.kovanCikis.transform);
-        _kovan.GetComponent<Rigidbody>().AddForce(_kovan.transform.right * Random.Range(200, 500));
+        _kovan.GetComponent<Rigidbody>().AddForce(_kovan.transform.right * Random.Range(50, 100));
         _kovan.GetComponent<Rigidbody>().AddForce(_kovan.transform.up * Random.Range(10, 30));
+        _kovan.transform.SetParent(null); 
     }
 
     [Command]
@@ -344,5 +345,10 @@ public class atesSistemi : NetworkBehaviour
     public void RpcSkop(int _deger)
     {
         silah.animator.SetInteger("Skop", _deger);
+        if(_deger == 0){
+            foreach(var i in silah.durbunler){
+                i.SetActive(false);
+            }
+        }
     }
 }

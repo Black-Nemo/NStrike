@@ -20,6 +20,9 @@ public class Mermi : NetworkBehaviour
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if(isServer){
+            NetworkServer.Destroy(gameObject);
+        }
         //CmdOnTriggerEnter(other.gameObject);
     }
 

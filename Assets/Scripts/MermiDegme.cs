@@ -26,7 +26,7 @@ public class MermiDegme : NetworkBehaviour
         
         if (_Destroy)
         {
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject, 0.1f);
         }
     }
 
